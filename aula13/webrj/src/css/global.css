@@ -27,7 +27,7 @@ body {
 .closed-sidebar:hover {
     background-color: rgba(180, 180, 180, 0.37);
     height: 100%;
-    width: 200px;
+    width: 180px;
 }
 
 .flex {
@@ -77,7 +77,7 @@ body {
 }
 
 .item-hover:hover {
-    background-color: rgb(104, 89, 1);
+    background-color: rgba(150, 127, 0, 0.062);
 }
 
 .center-itens {
