@@ -1,6 +1,6 @@
 import React from 'react'
 
-const News = ({ message, alo }) => {
+const NewsDetails = ({ message, alo }) => {
     console.log(alo)
 
     return (<div>
@@ -8,21 +8,21 @@ const News = ({ message, alo }) => {
     </div>)
 }
 
-const Outra = () => {
+const MainNews = () => {
     return (<div>
         <h1>Outra coisa</h1>
     </div>)
 }
 
-const Fake = () => {
+const News = () => {
     const text = 'Fake news'
 
     return (
         <>
-            <Outra />
-            <News message={ text } alo={ 21 } />
+            <MainNews />
+            <NewsDetails message={ text } alo={ 21 } />
         </>
     )
 }
 
-export default Fake
+export default News
