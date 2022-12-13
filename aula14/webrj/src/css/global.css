@@ -1,0 +1,85 @@
+body {
+    background-color: rgba(150, 127, 0, 0.685);
+}
+
+.main-container {
+    margin: 0;
+    padding: 2px;
+    background-color: rgb(241, 238, 215);
+    height: 630px;
+
+}
+
+.secondary-container {
+    width: 100%;
+}
+
+.open-sidebar {
+    height: 100%;
+    width: 200px;
+}
+
+.closed-sidebar {
+    height: 100%;
+    width: 50px;
+}
+
+.closed-sidebar:hover {
+    background-color: rgba(180, 180, 180, 0.37);
+    height: 100%;
+    width: 180px;
+}
+
+.flex {
+    display: flex
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.h-line {
+    height: 5px;
+    width: 100%;
+    background-color: rgba(150, 127, 0, 0.685);
+}
+
+.ml-1 {
+    margin-left: 5px;
+}
+
+.ml-3 {
+    margin-left: 15px;
+}
+
+.ml-5 {
+    margin-left: 25px;
+}
+
+.mr-3 {
+    margin-right: 15px;
+}
+
+.mr-5 {
+    margin-right: 25px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+.mt-5 {
+    margin-top: 25px;
+}
+
+.item-hover:hover {
+    background-color: rgba(150, 127, 0, 0.062);
+}
+
+.center-itens {
+    align-self: center;
+}

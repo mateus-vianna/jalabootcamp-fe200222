@@ -1,0 +1,12 @@
+.main-div { 
+    margin-bottom: 4rem;
+    /* padding-bottom: rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0 3rem;
+  }
+
+.headline { 
+    background-color: aqua;
+}
