@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Main from './layout/main';
-// import Main from './layout/fake'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

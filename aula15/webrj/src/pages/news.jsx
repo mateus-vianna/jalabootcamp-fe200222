@@ -1,16 +1,15 @@
 import React from 'react'
 
-const NewsDetails = ({ message, alo }) => {
-    console.log(alo)
+const NewsDetails = ({ message }) => {
 
     return (<div>
-        <h1>{ message }</h1>
+        <h3>{ message }</h3>
     </div>)
 }
 
 const MainNews = () => {
     return (<div>
-        <h1>Outra coisa</h1>
+        <h1>Dog News</h1>
     </div>)
 }
 
@@ -20,7 +19,7 @@ const News = () => {
     return (
         <>
             <MainNews />
-            <NewsDetails message={ text } alo={ 21 } />
+            <NewsDetails message={ text } />
         </>
     )
 }

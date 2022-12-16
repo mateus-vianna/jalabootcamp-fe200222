@@ -2,6 +2,10 @@ body {
     background-color: rgba(150, 127, 0, 0.685);
 }
 
+.max-width {
+    width: 100%;
+}
+
 .main-container {
     margin: 0;
     padding: 2px;
@@ -22,12 +26,6 @@ body {
 .closed-sidebar {
     height: 100%;
     width: 50px;
-}
-
-.closed-sidebar:hover {
-    background-color: rgba(180, 180, 180, 0.37);
-    height: 100%;
-    width: 180px;
 }
 
 .flex {
@@ -78,8 +76,28 @@ body {
 
 .item-hover:hover {
     background-color: rgba(150, 127, 0, 0.062);
+    cursor: pointer;
 }
 
 .center-itens {
     align-self: center;
+}
+
+.text-field {
+    margin-top: 8px;
+    font-size: 18;
+    font-weight: bold;
+    border-radius: 5;
+    width: 200px;
+}
+
+.btn {
+    width: 200px;
+    height: 50px
+}
+
+.btn:hover {
+    width: 200px;
+    height: 50px;
+    background-color: #faffde;
 }
