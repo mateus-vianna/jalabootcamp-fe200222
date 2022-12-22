@@ -18,3 +18,14 @@ export const addNewDog = {
     res.status(200).json(result);
   },
 };
+
+export const getAllDogs = {
+  path: '/api/dogs',
+  method: 'get',
+  handler: async (req, res) => {
+    const db = getDbConnection(process.env.DB_NAME);
+    await db.collection('dogs').find({}).toArray((err, result) => {
+      res.status(200).send(result);
+    });
+  },
+};
