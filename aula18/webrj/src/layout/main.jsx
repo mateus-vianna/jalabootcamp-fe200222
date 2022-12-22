@@ -15,7 +15,6 @@ function Main() {
 
     return (
         <div className='main-container flex'>
-
             <Sidebar>
                 <div className='ml-1 secondary-container'>
                     <Routes>
