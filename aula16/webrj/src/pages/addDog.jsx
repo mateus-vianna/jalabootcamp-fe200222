@@ -7,6 +7,7 @@ function AddDog() {
 
     function saveNewDog() {
         addNewDog(dog).then(response => {
+            console.log('%c%s', 'color: #d0bfff', response)
             setDog({ ...defaultDog })
         })
     }

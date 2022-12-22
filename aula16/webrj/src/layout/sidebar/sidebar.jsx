@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
 import SidebarItem from './sidebarItem'
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Sidebar = ({ setPage, children }) => {
 
     const [isOpen, setOpen] = useState()
-    const titles = ['Home', 'Add dog', 'Buy a Dog', 'Pet News']
+    const navigate = useNavigate()
+    // const routes = [
+    //     { page: "Home", link: <Link to="/">Home</Link> },
+    //     { page: "Add Dog", link: <Link to="add">Add Dog</Link> },
+    //     { page: "ListDog", link: <Link to="list">List Dogs</Link> },
+    //     { page: "News", link: <Link to="news">News</Link> }
+    // ]
+    const routes = [
+        { page: "Home", link: "/" },
+        { page: "Add Dog", link: "add" },
+        { page: "ListDog", link: "list" },
+        { page: "News", link: "news" }
+    ]
+
 
     const sideBarAction = (isOpen) => {
         return isOpen ? 'open-sidebar' : 'closed-sidebar'
@@ -24,9 +39,9 @@ const Sidebar = ({ setPage, children }) => {
                                 <h2>Doggy shop</h2>
                             </div>
                             <div className='h-line' />
-                            { titles.map((title, index) => {
+                            { routes.map((route, index) => {
                                 return (
-                                    <SidebarItem setPage={ setPage } key={ index } index={ index } title={ title } />)
+                                    <SidebarItem setPage={ setPage } key={ index } route={ route } />)
                             }) }
                         </>) }
                 </div>

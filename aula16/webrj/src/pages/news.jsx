@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 const NewsDetails = ({ message }) => {
 
@@ -20,6 +21,8 @@ const News = () => {
         <>
             <MainNews />
             <NewsDetails message={ text } />
+            <Link to='special'>Special page</Link>
+            <Outlet />
         </>
     )
 }
