@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom'
 const Sidebar = ({ setPage, children }) => {
 
     const [isOpen, setOpen] = useState()
-    const navigate = useNavigate()
     // const routes = [
     //     { page: "Home", link: <Link to="/">Home</Link> },
     //     { page: "Add Dog", link: <Link to="add">Add Dog</Link> },
