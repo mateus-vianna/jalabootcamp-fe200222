@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { addNewDog } from '../services/dogService'
+import { useInput } from '../hooks/UI/useInput'
 
 function AddDog() {
-    const defaultDog = { name: '', age: '', breed: '', transaction: '' }
-    const [dog, setDog] = useState({ ...defaultDog })
+    const clearDogForm = { name: '', age: '', breed: '', transaction: '' }
+    const [dog, setDog] = useState({ ...clearDogForm })
 
     function saveNewDog() {
         addNewDog(dog).then(response => {
-            console.log('%c%s', 'color: #d0bfff', response)
-            setDog({ ...defaultDog })
+            setDog({ ...clearDogForm })
         })
     }
+
+    useEffect(() => {
+        console.log('%c%s', 'color: #0a1718', 'Dog')
+    })
 
     return (
         <div className='ml-5 mt-5'>

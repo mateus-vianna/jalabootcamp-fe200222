@@ -17,12 +17,14 @@ const Sidebar = ({ setPage, children }) => {
         { page: "Home", link: "/" },
         { page: "Add Dog", link: "add" },
         { page: "ListDog", link: "list" },
-        { page: "News", link: "news" }
+        { page: "News", link: "news" },
+        { page: "List Users", link: "admin/user/list" },
+        { page: "Create User", link: "admin/user/create" }
     ]
 
 
     const sideBarAction = (isOpen) => {
-        return isOpen ? 'open-sidebar' : 'closed-sidebar'
+        return isOpen ? 'open-sidebar overflow-y' : 'closed-sidebar'
     }
 
     function openSideBar() {
