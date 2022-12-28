@@ -10,7 +10,7 @@ const NewsDetails = ({ message }) => {
 
 const MainNews = () => {
     return (<div>
-        <h1>Dog News</h1>
+        <h2>Dog News</h2>
     </div>)
 }
 

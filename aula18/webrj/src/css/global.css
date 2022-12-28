@@ -1,5 +1,6 @@
 body {
-    background-color: rgba(150, 127, 0, 0.685);
+    background-color: #DB162F;
+    height: 100%;
 }
 
 a {
@@ -25,9 +26,8 @@ a:visited {
 .main-container {
     margin: 0;
     padding: 2px;
-    background-color: rgb(241, 238, 215);
+    background-color: #DBDFAC;
     height: 630px;
-
 }
 
 .secondary-container {
@@ -59,7 +59,7 @@ a:visited {
 .h-line {
     height: 5px;
     width: 100%;
-    background-color: rgba(150, 127, 0, 0.685);
+    background-color: #3B1F2B;
 }
 
 .ml-1 {
@@ -89,6 +89,15 @@ a:visited {
 .mt-5 {
     margin-top: 25px;
 }
+.dogDiv{
+    direction: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.text-align{
+    text-align: center;
+}
 
 .item-hover:hover {
     background-color: rgba(150, 127, 0, 0.062);
@@ -117,7 +126,7 @@ a:visited {
 .btn:hover {
     width: 200px;
     height: 50px;
-    background-color: #faffde;
+    background-color: #5F758E;
 }
 
 .login-div {
