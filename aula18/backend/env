@@ -1,0 +1,5 @@
+URI_DB=mongodb+srv://frontend:dev123@meumundinho.dcezssp.mongodb.net/?retryWrites=true&w=majority
+DB_NAME=MeuMundinho
+JWT_SECRET=
+SENDGRID_API_KEY=
+SENDGRID_SENDER_MAIL=
