@@ -24,4 +24,13 @@ const getAllDogs = async () => {
     }
 }
 
-export {addNewDog, getAllDogs}
+const getDogById = async (id) => {
+  try {
+    const response = await fetch(`${url}/${id}`);
+    return await response.json();
+  } catch (error) {
+    console.log("Error on get dog by id fetch", error);
+  }
+};
+
+export {addNewDog, getAllDogs, getDogById}

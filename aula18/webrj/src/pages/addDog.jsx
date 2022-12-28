@@ -38,6 +38,21 @@ function AddDog() {
                     value={ dog.breed }
                     onChange={ (event) => setDog({ ...dog, breed: event.target.value }) }
                 />
+                <input className='text-field'
+                    label="description"
+                    placeholder='Description'
+                    type="text"
+                    value={ dog.description }
+                    onChange={ (event) => setDog({ ...dog, description: event.target.value }) }
+                />
+                <input
+                  className="min-w-full min-h-full"
+                  label="picture"
+                  placeholder="https://imageurl.com/image.jpg"
+                  type="text"
+                  value={ dog.picture }
+                  onChange={event => setDog({ ...dog, picture: event.target.value })}
+                />
                 <select value={ dog.transaction } name='Adoption' className='text-field' onChange={ (event) => setDog({ ...dog, transaction: event.target.value }) }>
                     <option value="">--Choose an option--</option>
                     <option value='Adoption'>Adoption</option>

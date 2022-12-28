@@ -1,13 +1,13 @@
 /* eslint-disable import/prefer-default-export */
-import { getDbConnection } from '../db.js';
 import { ObjectId } from 'mongodb';
+import { getDbConnection } from '../db.js';
 
 export const addNewDog = {
   path: '/api/dogs',
   method: 'post',
   handler: async (req, res) => {
     const {
-      name, age, breed, transaction,
+      name, age, breed, transaction, description, picture,
     } = req.body;
     const db = getDbConnection(process.env.DB_NAME);
     const result = await db.collection('dogs').insertOne({
@@ -15,6 +15,8 @@ export const addNewDog = {
       age,
       breed,
       transaction,
+      description,
+      picture,
     });
     res.status(200).json(result);
   },
@@ -32,12 +34,12 @@ export const getAllDogs = {
 };
 
 export const getDogById = {
-  path: "/api/dogs/:id",
-  method: "get",
+  path: '/api/dogs/:id',
+  method: 'get',
   handler: async (req, res, next) => {
     const id = ObjectId(req.params.id);
     const db = getDbConnection(process.env.DB_NAME);
-    await db.collection("dogs").findOne({ _id: id }, (err, result) => {
+    await db.collection('dogs').findOne({ _id: id }, (err, result) => {
       if (err) return next(err);
       res.status(200).send(result);
     });

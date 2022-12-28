@@ -22,7 +22,7 @@ function Main() {
                         <Route path='/' element={ <PrivateRoute authPath={ '/login' } outlet={ <Home /> }></PrivateRoute> } />
                         <Route path='/home' element={ <Home /> } />
                         <Route path='/add' element={ <AddDog /> } />
-                        <Route path='/dog/:_id' element={ <DogDetails /> } />
+                        <Route path='/dog/:id' element={ <DogDetails /> } />
                         <Route path='/list' element={ <ListDog /> } />
                         <Route path='/news' element={<News />}>
                         
