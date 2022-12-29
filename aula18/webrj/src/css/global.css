@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(150, 127, 0, 0.685);
+    background-color: #967f00af;
 }
 
 a {
@@ -25,8 +25,8 @@ a:visited {
 .main-container {
     margin: 0;
     padding: 2px;
-    background-color: rgb(241, 238, 215);
-    height: 630px;
+    background-color: #f1eed7;
+    height: 650px;
 
 }
 

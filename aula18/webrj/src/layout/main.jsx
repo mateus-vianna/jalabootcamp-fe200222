@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../css/global.css'
 import Sidebar from './sidebar/sidebar'
 import { Routes, Route } from 'react-router-dom'
@@ -9,6 +9,7 @@ import AddDog from '../pages/addDog'
 import ListDog from '../pages/listDog'
 import News from '../pages/news'
 import Signin from '../pages/signIn'
+import DogDetails from '../pages/DogDetails'
 
 
 function Main() {
@@ -26,7 +27,8 @@ function Main() {
                             <Route path='special' element={ <h1>Special News here</h1> } />
                         </Route>
                         <Route path="/login" element={ <Signin /> } />
-                        <Route path='*' element={ <h1>Page Not Found</h1> } />
+                        <Route path='*' element={<h1>Page Not Found</h1>} />
+                        <Route path='/DogDetails/:id' element={ <DogDetails /> }></Route>
                     </Routes>
                 </div>
             </Sidebar>

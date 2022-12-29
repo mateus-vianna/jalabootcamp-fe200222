@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAllDogs } from '../services/dogService'
+import DogCard from '../components/DogCard'
 
 const ListDog = () => {
 
@@ -19,18 +20,13 @@ const ListDog = () => {
     }, [])
 
     return (
-        <div className='ml-5 mt-5'>
-            <h1>Our Dogs</h1>
-            <div className='flex flex-column mt-5' style={ { height: '400px', overflowY: 'scroll' } }>
+        <div className='ml-5 mt-5 flex flex-col justify-center'>
+            <h1 className='text-lg font-bold'>Our Dogs</h1>
+            <div className='flex flex-column mt-5 bg-[#967f00af] w-96 items-center' style={ { height: '550px', overflowY: 'scroll' } }>
                 { dogs.map((dog, index) => {
                     return (
                         <div key={ index } className='mt-5'>
-                            <h3>{ index }</h3>
-                            <h3>{ dog._id }</h3>
-                            <h3>{ dog.name }</h3>
-                            <h3>{ dog.age }</h3>
-                            <h3>{ dog.breed }</h3>
-                            <h3>{ dog.transaction }</h3>
+                            <DogCard index={index} dog={dog} />
                         </div>)
                 }) }
             </div>
