@@ -5,6 +5,7 @@ import { useInput } from '../hooks/UI/useInput'
 function AddDog() {
     const clearDogForm = { name: '', age: '', breed: '', transaction: '' }
     const [dog, setDog] = useState({ ...clearDogForm })
+    const [pele, setPele] = useInput('Pele')
 
     function saveNewDog() {
         addNewDog(dog).then(response => {
@@ -21,6 +22,13 @@ function AddDog() {
             <h1>Add a new dog</h1>
             <article>Here you can add a new dog into our system. This dog will be available for selling or adoption right after data is sent</article>
             <div className='flex flex-column mt-5'>
+                <input
+                    className='text-filed'
+                    label="pele"
+                    type='text'
+                    placeholder='pele'
+                    { ...pele }
+                />
                 <input className='text-field'
                     label="name"
                     placeholder='Name'

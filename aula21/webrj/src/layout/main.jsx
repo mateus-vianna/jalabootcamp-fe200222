@@ -14,9 +14,10 @@ import EmailVerification from '../pages/verify'
 import VerifyEmail from '../pages/verified'
 import ListUsers from '../pages/admin/user/listUsers'
 import CreateUsers from '../pages/admin/user/createUsers'
+import Players from '../pages/player/player'
+
 
 function Main() {
-
     return (
         <div className='main-container flex'>
             <Sidebar>
@@ -25,6 +26,7 @@ function Main() {
                         <Route path='/' element={ <PrivateRoute authPath={ '/login' } outlet={ <Home /> }></PrivateRoute> } />
                         <Route path='/add' element={ <AddDog /> } />
                         <Route path='/list' element={ <ListDog /> } />
+                        <Route path='/players' element={ <Players /> } />
                         <Route path='/news' element={ <News /> }>
                             <Route path='special' element={ <h1>Special News here</h1> } />
                         </Route>

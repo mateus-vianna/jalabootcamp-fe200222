@@ -15,6 +15,7 @@ const Sidebar = ({ setPage, children }) => {
     // ]
     const routes = [
         { page: "Home", link: "/" },
+        { page: "Players", link: '/players' },
         { page: "Add Dog", link: "add" },
         { page: "ListDog", link: "list" },
         { page: "News", link: "news" },
