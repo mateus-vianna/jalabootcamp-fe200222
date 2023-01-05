@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getAllDogs } from '../services/dogService'
 import { useFetch } from '../hooks/useFetch'
+
 const ListDog = () => {
 
     const [dogs, setDog] = useState([])
@@ -9,7 +10,6 @@ const ListDog = () => {
     useEffect(() => {
         setDog(data)
     }, [data])
-
 
     if (loading) return <h1>loading...</h1>
     if (error)

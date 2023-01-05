@@ -5,6 +5,7 @@ export function useFetch(fetch, body, store, name) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState()
 
+
     useEffect(() => {
         if (!fetch()) return
         fetch(body)
@@ -12,7 +13,6 @@ export function useFetch(fetch, body, store, name) {
             .then(setData)
             .then(() => setLoading(false))
             .catch(setError)
-
     }, [fetch])
 
     useEffect(() => {

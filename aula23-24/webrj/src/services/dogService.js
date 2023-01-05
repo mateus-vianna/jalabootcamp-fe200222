@@ -10,17 +10,12 @@ const addNewDog = async (body) => {
         }, body: JSON.stringify(body)});
         return await response.json();
     } catch (error) {
-        console.log('Error on add new dog fetch', error)
     }
 }
 
 
 const getAllDogs = async () => {
-    try {
-        return fetch(url);
-    } catch (error) {
-        console.log('Error on get all dogs fetch', error)
-    }
+    return fetch(url);
 }
 
 export {addNewDog, getAllDogs}

@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import PrivateRoute from '../components/privateRoute'
 
 import Home from '../pages/home'
-import AddDog from '../pages/addDog'
+import AddDog from '../pages/admin/dogs/addDog'
 import ListDog from '../pages/listDog'
 import News from '../pages/news'
 import Signin from '../pages/signIn'

@@ -1,4 +1,4 @@
-const url = 'http://localhost:8080/api/user'
+const url = 'http://localhost:8080/api/users'
   
   const createUser = async (body) => {
         try {
@@ -14,4 +14,14 @@ const url = 'http://localhost:8080/api/user'
     }
 }
 
+const getUsers = async () => {
+    try {
+        const response = await fetch(url)
+        return await response.json()
+    } catch (error) {
+        console.log('Error getting all users', error)
+    }
+}
+
 export default createUser;
+export { getUsers };

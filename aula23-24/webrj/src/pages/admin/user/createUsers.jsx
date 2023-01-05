@@ -4,7 +4,6 @@ import createUser from '../../../services/userService'
 
 const CreateUsers = () => {
 
-
     const name = useRef()
     const email = useRef()
     const type = useRef()
@@ -21,10 +20,6 @@ const CreateUsers = () => {
         //     isVerified: false
         // })
     }
-
-    useEffect(() => {
-        console.log('%c%s', 'color: #1e4a00', 'REF')
-    })
 
     return (
         <div className='ml-5 mt-5'>
