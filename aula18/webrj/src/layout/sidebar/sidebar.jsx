@@ -35,7 +35,7 @@ const Sidebar = ({ setPage, children }) => {
                     { isOpen && (
                         <>
                             <div className='mt-4 center-itens'>
-                                <h2>Doggy shop</h2>
+                                <h4>Doggy shop</h4>
                             </div>
                             <div className='h-line' />
                             { routes.map((route, index) => {
