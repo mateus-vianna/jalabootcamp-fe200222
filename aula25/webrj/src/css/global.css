@@ -128,3 +128,7 @@ a:visited {
 .overflow-y {
     overflow-y: scroll;
 }
+
+.container-500 {
+    height: 500px;
+}

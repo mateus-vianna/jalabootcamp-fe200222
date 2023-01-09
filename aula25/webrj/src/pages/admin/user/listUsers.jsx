@@ -19,7 +19,7 @@ const ListUsers = () => {
 
     return (<div className='ml-5 mt-5'>
         <h1>Registered Users</h1>
-        <div className='flex flex-column mt-5 overflow-y'>
+        <div className='flex flex-column mt-5 overflow-y container-500'>
             { users?.map((user, index) => {
                 return (
                     <div key={ index }>

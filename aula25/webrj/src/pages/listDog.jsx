@@ -17,7 +17,7 @@ const ListDog = () => {
     return (
         <div className='ml-5 mt-5'>
             <h1>Our Dogs</h1>
-            <div className='flex flex-column mt-5' style={ { height: '400px', overflowY: 'scroll' } }>
+            <div className='flex flex-column mt-5 container-500 overflow-y'>
                 { dogs?.map((dog, index) => {
                     return (
                         <div key={ index } className='mt-5'>

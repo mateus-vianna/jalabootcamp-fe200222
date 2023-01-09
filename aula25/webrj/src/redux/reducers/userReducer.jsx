@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import { getUsers } from "../../services/userService"
 
 export const userSlice = createSlice({
     name: "user",
-    initialState: { users: [] },
+    initialState: { users: [], status: 'idle', error: null },
     reducers: {
         add: (state, users) => {
             console.log('Users inside action', users)
@@ -12,20 +12,39 @@ export const userSlice = createSlice({
         remove: (state, user) => {
             state = state.filter((u) => u.id !== user.payload.id)
         }
+    },
+    extraReducers: builder => {
+        builder.addCase(loadUsersThunk.pending, state => {
+            state.status = 'loading'
+        })
+        builder.addCase(loadUsersThunk.fulfilled, (state, action) => {
+            state.status = 'succeeded'
+            state.users = action.payload
+        })
+        builder.addCase(loadUsersThunk.rejected, (state, action) => {
+            state.status = 'failed'
+            state.error = action
+        })
     }
 })
 
 
-export const loadUsersThunk = () => async (dispatch, getState) => {
+// {
+// Multiple possible status enum values
+// status: 'idle' | 'loading' | 'succeeded' | 'failed',
+// error: string | null
+// type : pending | fulfilled | rejected
+// }
+
+export const loadUsersThunk = createAsyncThunk('users/load', async () => {
     try {
         const users = await getUsers()
-        console.log('Users inside thunks', users)
-        dispatch(add(users))
+        return users
     } catch (error) {
-        console.log('Error on load users thunks', error)
+        console.log(error)
+        return error
     }
-
-}
+})
 
 
 
