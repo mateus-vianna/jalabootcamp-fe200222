@@ -1,7 +1,7 @@
 
 # Thunks
 
-## To deliver this exercise you should  fork from this repo and commit back on a branch your_name_26
+## To deliver this exercise you should  fork from this repo and commit back on a branch your_name_27
 
 
 ## On this exercise you guys should finish user CRUD thunk actions. Right now we only have a read thunk "loadUsersThunk". You should also improve the listUsers page making possible to delete and edit an user. Feel free to create a details page if you want to! The main goal is to have the possibility to make changes on an user.
