@@ -23,5 +23,36 @@ const getUsers = async () => {
     }
 }
 
-export default createUser;
-export { getUsers };
+const deleteUser = async (id) => {
+    try {
+        const response = await fetch(`${url}/${id}`, {
+            method: 'delete',
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        });
+        return await response.json();
+    } catch (error) {
+        console.log('Error deleting user', error)
+    }
+}
+
+const updateUser = async (id, body) => {
+    try {
+        const response = await fetch(`${url}/${id}`, {
+            method: 'put',
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        return await response.json();
+    } catch (error) {
+        console.log('Error updating user', error)
+    }
+}
+
+
+
+export { createUser, getUsers, updateUser, deleteUser }
