@@ -15,6 +15,7 @@ import VerifyEmail from '../pages/verified'
 import ListUsers from '../pages/admin/user/listUsers'
 import CreateUsers from '../pages/admin/user/createUsers'
 import Players from '../pages/player/player'
+import EditUsers from '../pages/admin/user/editUsers'
 
 
 function Main() {
@@ -35,7 +36,8 @@ function Main() {
                         <Route path="/verify" element={ <EmailVerification /> } />
                         <Route path="/verify/:verificationCode" element={ <VerifyEmail /> } />
                         <Route path="/admin/user/list" element={ <ListUsers /> } />
-                        <Route path="/admin/user/create" element={ <CreateUsers /> } />
+                        <Route path="/admin/user/create" element={<CreateUsers />} />
+                        <Route path="/admin/user/edit/:id" element={ <EditUsers/> } />
                         <Route path='*' element={ <h1>Page Not Found</h1> } />
                     </Routes>
                 </div>
