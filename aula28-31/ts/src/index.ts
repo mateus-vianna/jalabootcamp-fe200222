@@ -159,3 +159,9 @@ y[2] = 12312
 y[34] = true
 
 let z: Awaited<IDog> = new Promise<IDog>(pupu)
+
+let l: Omit<IDog, 'id' | 'birth'> = {}
+
+let o: Partial<IDog> = {
+
+}
