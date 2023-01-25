@@ -25,7 +25,8 @@ const user = {
     }
 }
 
-const authorize = function (target: any, property: string, descriptor: PropertyDescriptor) {
+
+const authorize = (role: string) => function (target: any, property: string, descriptor: PropertyDescriptor) {
     const wrapper = descriptor.value
 
     descriptor.value = function () {
@@ -33,27 +34,53 @@ const authorize = function (target: any, property: string, descriptor: PropertyD
             throw Error('User not authenticated')
         }
 
+        if (!user.isInRole(role))
+            throw Error('User is not authorized to execute a get contacts')
 
+        try {
+            return wrapper.apply(this, arguments)
+        }
+        catch (e) {
+            throw Error(e)
+        }
 
-
-
-        return wrapper.apply(this, arguments)
     }
 }
 
+
+function freeze (constructor: Function) {
+    Object.freeze(constructor)
+    Object.freeze(constructor.prototype)
+}
+
+function singleton<T extends { new(...args: any[]): {} }> (constructor: T) {
+    return class Singleton extends constructor {
+        static _instance = null
+        constructor (...args) {
+            super(...args)
+            if (Singleton._instance) {
+                throw Error('Duplicate instance')
+            }
+            Singleton._instance = this
+        }
+    }
+}
+
+
+@freeze
+@singleton
 class ContactRepository {
+    constructor () { }
+
     private contacts: IContact[] = [];
 
-    @authorize
+    @authorize('sysAdmin')
     getContactById (id: number): IContact {
-        if (!user.isInRole('sysAdmin'))
-            throw Error('User is not authorized to execute a get contacts')
         const contact = this.contacts.find(contact => contact.id === id)
         return contact
     }
 
-
-    @authorize
+    @authorize('dogOwner')
     createNewContact (contact: IContact): void {
         const exists = this.getContactById(contact.id)
 
