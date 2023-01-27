@@ -4,7 +4,7 @@
         "checkJs": true,
         "target": "ES6",
         "outDir": "build",
-        "noEmit": false,
+        "noEmit": true,
         // "noImplicitAny": true
         "experimentalDecorators": true
     },
