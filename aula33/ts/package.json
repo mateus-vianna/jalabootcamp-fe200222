@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:local": "npx webpack --config local.webpack.config.js",
+    "build:dev": "npx webpack --config dev.webpack.config.js",
+    "build:prod": "npx webpack --config prod.webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,8 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
+    "@babel/core": "^7.20.12",
+    "babel-loader": "^9.1.2",
     "reflect-metadata": "^0.1.13"
   }
 }
